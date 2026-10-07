@@ -1,0 +1,105 @@
+[gd_scene load_steps=17 format=3 uid="uid://cu2we1a1iljte"]
+
+[ext_resource type="Script" path="res://Scripts/inici.gd" id="1_n6kdc"]
+[ext_resource type="Texture2D" uid="uid://ir25sv23nksy" path="res://Animacións/inici/dk1.png" id="2_4fvk8"]
+[ext_resource type="Texture2D" uid="uid://clta1qnd8rugi" path="res://Animacións/inici/dk2.png" id="3_k1oiv"]
+[ext_resource type="Texture2D" uid="uid://c4whymllfpuwt" path="res://Animacións/inici/dk3.png" id="4_gx1w6"]
+[ext_resource type="Texture2D" uid="uid://d2wxal015rhy0" path="res://Animacións/inici/dk4.png" id="5_3fljc"]
+[ext_resource type="Texture2D" uid="uid://bgno5ae6nxmv" path="res://Animacións/inici/dk5.png" id="6_tc5e4"]
+[ext_resource type="Texture2D" uid="uid://ds7bwys03cctv" path="res://Animacións/inici/dk6.png" id="7_ioky7"]
+[ext_resource type="Texture2D" uid="uid://osqmrm52qdyc" path="res://Animacións/inici/dk7.png" id="8_xrd44"]
+[ext_resource type="Texture2D" uid="uid://b2o4qfmrwa17d" path="res://Animacións/inici/dk8.png" id="9_aat41"]
+[ext_resource type="Texture2D" uid="uid://bkta1b55l664h" path="res://Animacións/inici/dk9.png" id="10_e0psb"]
+[ext_resource type="Texture2D" uid="uid://cb6ugc3k0q78v" path="res://Animacións/inici/dk10.png" id="11_gbl36"]
+[ext_resource type="Texture2D" uid="uid://bksw6170l7uo4" path="res://Animacións/inici/dk11.png" id="12_sjbc6"]
+[ext_resource type="Texture2D" uid="uid://busir0t3m55r3" path="res://Animacións/inici/dk12.png" id="13_586dp"]
+[ext_resource type="Texture2D" uid="uid://diqwpns1xhrpk" path="res://Sin título-1.png" id="14_n6yx4"]
+[ext_resource type="AudioStream" uid="uid://bteg0rfepvmnl" path="res://Audios/1. A NORMAL BARREL.wav" id="15_6h2us"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qidp6"]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": ExtResource("2_4fvk8")
+}, {
+"duration": 5.0,
+"texture": ExtResource("3_k1oiv")
+}, {
+"duration": 5.0,
+"texture": ExtResource("4_gx1w6")
+}, {
+"duration": 5.0,
+"texture": ExtResource("5_3fljc")
+}, {
+"duration": 5.0,
+"texture": ExtResource("6_tc5e4")
+}, {
+"duration": 5.0,
+"texture": ExtResource("7_ioky7")
+}, {
+"duration": 5.0,
+"texture": ExtResource("8_xrd44")
+}, {
+"duration": 5.0,
+"texture": ExtResource("9_aat41")
+}, {
+"duration": 5.0,
+"texture": ExtResource("10_e0psb")
+}, {
+"duration": 5.0,
+"texture": ExtResource("11_gbl36")
+}, {
+"duration": 5.0,
+"texture": ExtResource("12_sjbc6")
+}, {
+"duration": 5.0,
+"texture": ExtResource("13_586dp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Inici" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n6kdc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(575.389, 326.5)
+scale = Vector2(0.899045, 0.893055)
+sprite_frames = SubResource("SpriteFrames_qidp6")
+autoplay = "default"
+frame_progress = 0.164627
+
+[node name="Inici" type="Button" parent="."]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 342.0
+offset_right = 719.0
+offset_bottom = 421.0
+text = "INICI"
+
+[node name="Sortir" type="Button" parent="."]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 462.0
+offset_right = 723.0
+offset_bottom = 523.0
+text = "SORTIR"
+
+[node name="SinTítulo-1" type="Sprite2D" parent="."]
+position = Vector2(564, 256)
+texture = ExtResource("14_n6yx4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SinTítulo-1"]
+stream = ExtResource("15_6h2us")
+volume_db = -10.0
+autoplay = true
+
+[connection signal="pressed" from="Inici" to="." method="_on_inici_pressed"]
+[connection signal="pressed" from="Sortir" to="." method="_on_sortir_pressed"]

@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://bremjhx5lm53x"]
+
+[ext_resource type="Texture2D" uid="uid://ce6s5137xq3ic" path="res://VIDA.png" id="1_l3nah"]
+[ext_resource type="Script" path="res://Scripts/interficie.gd" id="1_xldx0"]
+[ext_resource type="Texture2D" uid="uid://cwvryaeodbjcn" path="res://vida2.png" id="3_2rhx0"]
+
+[sub_resource type="FontVariation" id="FontVariation_ii2ks"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_06mfv"]
+font = SubResource("FontVariation_ii2ks")
+font_size = 48
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Interficie" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xldx0")
+
+[node name="Vida1" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(933, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_l3nah")
+
+[node name="Vida2" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(1013, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_l3nah")
+
+[node name="Vida3" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(1093, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_l3nah")
+
+[node name="M1" type="Sprite2D" parent="."]
+z_index = 100
+position = Vector2(933, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_2rhx0")
+
+[node name="M2" type="Sprite2D" parent="."]
+z_index = 100
+position = Vector2(1013, 35)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_2rhx0")
+
+[node name="M3" type="Sprite2D" parent="."]
+z_index = 100
+position = Vector2(1093, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_2rhx0")
+
+[node name="Label" type="Label" parent="."]
+z_index = 1000
+layout_mode = 0
+offset_left = 139.0
+offset_top = 192.0
+offset_right = 1028.0
+offset_bottom = 526.0
+text = "HAS PERDUT! :(
+FI DEL JOC"
+label_settings = SubResource("LabelSettings_06mfv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="hidden" from="Label" to="." method="_on_label_hidden"]
